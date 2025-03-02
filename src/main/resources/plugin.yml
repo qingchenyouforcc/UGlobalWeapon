@@ -1,0 +1,10 @@
+name: weapon
+version: '1.0-SNAPSHOT'
+main: org.mmga.uglobal.Weapon
+api-version: '1.21'
+authors: [ qing_chen_you ]
+commands:
+  UGlobalWeapon:
+    description: Configure the global weapon system
+    usage: /UGlobalWeapon <parameter>
+    permission: uGlobalWeapon.UGlobalWeapon
