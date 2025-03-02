@@ -1,6 +1,6 @@
 # UGlobalWeapon - Minecraft Plugin
 
-![Minecraft](https://img.shields.io/badge/Minecraft-1.13%2B-blue?style=flat&logo=minecraft)
+![Minecraft](https://img.shields.io/badge/Minecraft-1.21%2B-blue?style=flat&logo=minecraft)
 ![Spigot](https://img.shields.io/badge/Spigot-API-ED8C1A?style=flat&logo=java)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
