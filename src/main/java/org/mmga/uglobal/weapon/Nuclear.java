@@ -41,13 +41,20 @@ public class Nuclear {
                     return;
                 }
 
-                // 在火球当前位置生成粒子效果，例如 FLAME 粒子
+                // 在火球当前位置生成粒子效果
                 fireball.getWorld().spawnParticle(
                         Particle.FLAME,              // 粒子类型
                         fireball.getLocation(),      // 粒子生成位置
-                        20,                          // 粒子数量
-                        1.5, 1.5, 1.5,               // X、Y、Z 方向扩散范围
+                        50,                          // 粒子数量
+                        1, 1, 1,               // X、Y、Z 方向扩散范围
                         0.01                         // 粒子速度
+                );
+                fireball.getWorld().spawnParticle(
+                        Particle.SMOKE,
+                        fireball.getLocation(),
+                        25,
+                        2, 2, 2,
+                        0
                 );
             }
         }.runTaskTimer(Weapon.getInstance(), 0L, 2L); // 0 tick 延时，2 tick 间隔执行

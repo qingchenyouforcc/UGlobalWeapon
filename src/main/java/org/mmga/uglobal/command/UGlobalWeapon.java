@@ -43,6 +43,7 @@ public class UGlobalWeapon implements CommandExecutor {
                 // 玩家提示（temp)
                 player.sendTitle(ChatColor.RED+"!!警告：已启用核打击!!", "将在"+location.getX()+" "+location.getZ()+"进行核打击", 10, 150, 10);
                 WarningSoundSummon.playNuclearSound(player, Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 70);
+                break;
 
             case "missile":
                 // 导弹生成
