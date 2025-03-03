@@ -19,7 +19,7 @@ public class Nuclear {
             for (int j = -(10 + 20 * 4); j <= 10 + 20 * 4; j += 20) {
                 Location summonlocation = new Location(world, location.getX() + i, location.getY(), location.getZ() + j);
                 summonFireball(world, summonlocation, Yield);
-                //生成位置 System.out.println("i:"+i+" j:"+j+" location:"+summonlocation);
+                //生成位置:System.out.println("i:"+i+" j:"+j+" location:"+summonlocation);
             }
         }
     }
