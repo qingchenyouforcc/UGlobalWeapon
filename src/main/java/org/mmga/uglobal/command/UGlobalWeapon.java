@@ -24,7 +24,7 @@ public class UGlobalWeapon implements CommandExecutor {
         // 检查是否有参数
         if (args.length == 0) {
             player.sendMessage(ChatColor.RED + "Usage: /UGlobalWeapon <parameter>");
-            return false; // 表明参数错误，此时插件会显示前面定义的 `usage` 信息
+            return false;
         }
 
         // 获取指令的第一个参数
