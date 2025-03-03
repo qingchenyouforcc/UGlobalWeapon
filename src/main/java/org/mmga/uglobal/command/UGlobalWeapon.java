@@ -9,6 +9,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.mmga.uglobal.Weapon;
+import org.mmga.uglobal.utils.WarningSoundSummon;
+import org.mmga.uglobal.weapon.Missile;
 import org.mmga.uglobal.weapon.Nuclear;
 
 public class UGlobalWeapon implements CommandExecutor {
@@ -40,23 +42,17 @@ public class UGlobalWeapon implements CommandExecutor {
                 nuclear.summonNuclear(player.getWorld(), location, Float.parseFloat(args[4]));
                 // 玩家提示（temp)
                 player.sendTitle(ChatColor.RED+"!!警告：已启用核打击!!", "将在"+location.getX()+" "+location.getZ()+"进行核打击", 10, 150, 10);
-                new BukkitRunnable() {
-                    int times = 0;
-
-                    @Override
-                    public void run() {
-                        if (times >= 70) {
-                            cancel();
-                            return;
-                        }
-                        player.playSound(player, Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 10, 1);
-                        times++;
-                    }
-                }.runTaskTimer(Weapon.getInstance(), 0L, 3L);  // 0 tick 延迟, 100 tick 间隔
-                break;
+                WarningSoundSummon.playNuclearSound(player, Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 70);
 
             case "missile":
+                // 导弹生成
+                Location missileLocation = new Location(player.getWorld(), Double.parseDouble(args[1]), Double.parseDouble(args[2]), Double.parseDouble(args[3]));
                 player.sendMessage(ChatColor.GREEN + "You have chosen \"missile\".");
+                Missile missile = new Missile();
+                missile.summonNuclear(player.getWorld(), missileLocation, Float.parseFloat(args[4]));
+                // 玩家提示
+                player.sendTitle(ChatColor.RED+"!!你已发射导弹!!", "将在"+missileLocation.getX()+" "+missileLocation.getZ()+"进行精准打击", 10, 100, 10);
+                WarningSoundSummon.playNuclearSound(player, Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 45);
                 break;
 
             default:
