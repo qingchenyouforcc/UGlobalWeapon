@@ -1,6 +1,7 @@
 package org.mmga.uglobal;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import org.mmga.uglobal.command.CommandTabCompleter;
 import org.mmga.uglobal.command.UGlobalWeapon;
 import org.mmga.uglobal.utils.FireballInteractionListener;
 
@@ -18,6 +19,9 @@ public final class Weapon extends JavaPlugin {
         // Register commands
         Objects.requireNonNull(getCommand("UGlobalWeapon")).setExecutor(new UGlobalWeapon());
         getServer().getPluginManager().registerEvents(new FireballInteractionListener(), this);
+        if (this.getCommand("UGlobalWeapon") != null) {
+            Objects.requireNonNull(this.getCommand("UGlobalWeapon")).setTabCompleter(new CommandTabCompleter());
+        }
 
     }
 
