@@ -24,7 +24,7 @@ public class CommandTabCompleter implements TabCompleter {
                     .collect(Collectors.toList());
         }
 
-        // 若有更多参数，可以添加其他逻辑……
+        // 更多参数
         return new ArrayList<>();
     }
 }
