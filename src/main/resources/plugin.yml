@@ -6,5 +6,5 @@ authors: [ qing_chen_you ]
 commands:
   UGlobalWeapon:
     description: Select UGlobalWeapon
-    usage: /UGlobalWeapon <parameter>
+    usage: /UGlobalWeapon <WeaponType> <x> <y> <z> <power>
     permission: uGlobalWeapon.UGlobalWeapon
