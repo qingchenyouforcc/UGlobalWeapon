@@ -11,7 +11,7 @@ import org.mmga.uglobal.utils.WarningSoundSummon;
 import org.mmga.uglobal.weapon.Missile;
 import org.mmga.uglobal.weapon.Nuclear;
 
-public class UGlobalWeapon implements CommandExecutor {
+public class UGlobalWeaponCommand implements CommandExecutor {
 
     @SuppressWarnings("NullableProblems")
     @Override
@@ -23,7 +23,7 @@ public class UGlobalWeapon implements CommandExecutor {
 
         // 检查是否有参数
         if (args.length == 0) {
-            player.sendMessage(ChatColor.RED + "Usage: /UGlobalWeapon <WeaponType> <x> <y> <z> <power>");
+            player.sendMessage(ChatColor.RED + "Usage: /uglobalweapon <WeaponType> <x> <y> <z> <power>");
             return false;
         }
 
