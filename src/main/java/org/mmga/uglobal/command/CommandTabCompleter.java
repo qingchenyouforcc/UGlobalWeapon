@@ -16,7 +16,7 @@ public class CommandTabCompleter implements TabCompleter {
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         // 我们只处理 /uglobalweapon 命令
-        if (!command.getName().equalsIgnoreCase("UGlobalWeapon")) {
+        if (!command.getName().equalsIgnoreCase("uglobalweapon")) {
             return Collections.emptyList();
         }
 
@@ -25,7 +25,7 @@ public class CommandTabCompleter implements TabCompleter {
             return Collections.emptyList();
         }
 
-        if (args.length == 0) {
+        if (args.length == 1) {
             List<String> completions = new ArrayList<>();
             completions.add("missile");
             completions.add("nuclear");
