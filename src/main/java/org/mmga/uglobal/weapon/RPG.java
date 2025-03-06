@@ -18,10 +18,9 @@ public class RPG extends Fireball {
         Vector direction = eyeLocation.getDirection();
         // 在玩家眼部位置前方一点生成火球，避免直接与玩家重叠
         Location spawnLocation = eyeLocation.add(direction.multiply(1.5));
-        summonFireball(world, spawnLocation, Yield);
+        summonFireball(world, spawnLocation, direction, Yield);
     }
 
-    @Override
     public void summonFireball(World world, Location location, Vector direction, float Yield) {
         org.bukkit.entity.Fireball fireball = world.spawn(location, org.bukkit.entity.Fireball.class);
         fireball.setDirection(direction);
