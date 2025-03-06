@@ -42,7 +42,7 @@ public class PlayerInteractionEvent implements Listener {
             if (container.has(key, PersistentDataType.STRING)) {
                 // 获取 tag 的值
                 String tagValue = container.get(key, PersistentDataType.STRING);
-                if ("rpg".equals(tagValue)) {
+                if ("RPG".equals(tagValue)) {
                     player.sendMessage("你使用了带有自定义 tag 的特殊物品！");
                     // 停止继续执行默认行为
                     event.setCancelled(true);
