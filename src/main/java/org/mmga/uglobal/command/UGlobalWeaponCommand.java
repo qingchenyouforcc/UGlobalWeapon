@@ -1,12 +1,15 @@
 package org.mmga.uglobal.command;
 
-import org.bukkit.ChatColor;
-import org.bukkit.Location;
-import org.bukkit.Sound;
+import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.persistence.PersistentDataType;
+import org.mmga.uglobal.Weapon;
 import org.mmga.uglobal.utils.WarningSoundSummon;
 import org.mmga.uglobal.weapon.Missile;
 import org.mmga.uglobal.weapon.Nuclear;
@@ -33,6 +36,21 @@ public class UGlobalWeaponCommand implements CommandExecutor {
         // 根据参数执行不同的逻辑
         try {
             switch (parameter.toLowerCase()) {
+                case "rpg":
+                    ItemStack item = new ItemStack(Material.NETHER_STAR, 1);
+                    ItemMeta meta = item.getItemMeta();
+                    if (meta != null) {
+                        // 使用 NamespacedKey 定义一个唯一标识符
+                        NamespacedKey key = new NamespacedKey(Weapon.getInstance(), "special_item");
+                        PersistentDataContainer container = meta.getPersistentDataContainer();
+                        // 存储一个字符串作为自定义标记
+                        container.set(key, PersistentDataType.STRING, "RPG");
+                        meta.setDisplayName(ChatColor.RED + "RPG");
+                        item.setItemMeta(meta);
+                    }
+                    item.setItemMeta(meta);
+                    player.getInventory().addItem(item);
+                    break;
                 case "nuclear":
                     // 核弹生成 (temp)
                     Location location = new Location(player.getWorld(), Double.parseDouble(args[1]), Double.parseDouble(args[2]), Double.parseDouble(args[3]));
