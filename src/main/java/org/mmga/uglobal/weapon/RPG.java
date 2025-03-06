@@ -42,15 +42,15 @@ public class RPG extends Fireball {
                 fireball.getWorld().spawnParticle(
                         Particle.FLAME,              // 粒子类型
                         fireball.getLocation(),      // 粒子生成位置
-                        50,                          // 粒子数量
-                        1, 1, 1,               // X、Y、Z 方向扩散范围
+                        30,                          // 粒子数量
+                        0.75, 0.75, 0.75,               // X、Y、Z 方向扩散范围
                         0.01                         // 粒子速度
                 );
                 fireball.getWorld().spawnParticle(
                         Particle.SMOKE,
                         fireball.getLocation(),
-                        25,
-                        2, 2, 2,
+                        15,
+                        0.75*2, 0.75*2, 0.75*2,
                         0
                 );
             }

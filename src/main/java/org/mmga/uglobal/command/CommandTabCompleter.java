@@ -43,7 +43,7 @@ public class CommandTabCompleter implements TabCompleter {
 
             // 根据玩家当前输入过滤（忽略大小写）
             return completions.stream()
-                    .filter(s -> s.toLowerCase().startsWith(args[0].toLowerCase()))
+                    .filter(s -> s.toLowerCase().startsWith(args[4].toLowerCase()))
                     .collect(Collectors.toList());
         }
 
@@ -67,17 +67,17 @@ public class CommandTabCompleter implements TabCompleter {
         switch (coordIndex) {
             case 0: // X 坐标
                 if (input.startsWith("~")) {
-                    suggestion = String.valueOf(((int) loc.getX()));
+                    suggestion = "~" + ((int) loc.getX());
                 }
                 break;
             case 1: // Y 坐标
                 if (input.startsWith("~")) {
-                    suggestion = String.valueOf(((int) loc.getY()));
+                    suggestion = "~" + ((int) loc.getY());
                 }
                 break;
             case 2: // Z 坐标
                 if (input.startsWith("~")) {
-                    suggestion = String.valueOf(((int) loc.getZ()));
+                    suggestion = "~" + ((int) loc.getZ());
                 }
                 break;
             default:

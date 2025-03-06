@@ -15,6 +15,7 @@ import org.mmga.uglobal.weapon.Missile;
 import org.mmga.uglobal.weapon.Fireball;
 
 public class UGlobalWeaponCommand implements CommandExecutor {
+    Player MyPlayer;
 
     @SuppressWarnings("NullableProblems")
     @Override
@@ -23,6 +24,8 @@ public class UGlobalWeaponCommand implements CommandExecutor {
             commandSender.sendMessage(ChatColor.RED + "You must be a player to use this command!");
             return true;
         }
+
+        MyPlayer = player;
 
         // 检查是否有参数
         if (args.length == 0) {
@@ -53,7 +56,7 @@ public class UGlobalWeaponCommand implements CommandExecutor {
                     break;
                 case "nuclear":
                     // 核弹生成 (temp)
-                    Location location = new Location(player.getWorld(), Double.parseDouble(args[1]), Double.parseDouble(args[2]), Double.parseDouble(args[3]));
+                    Location location = new Location(player.getWorld(), Double.parseDouble(LocationPX(args[1])), Double.parseDouble(LocationPY(args[2])), Double.parseDouble(LocationPZ(args[3])));
                     player.sendMessage(ChatColor.GREEN + "You have chosen \"nuclear\".");
                     Fireball nuclear = new Fireball();
                     nuclear.summonRanged(player.getWorld(), location, Float.parseFloat(args[4]));
@@ -64,7 +67,7 @@ public class UGlobalWeaponCommand implements CommandExecutor {
 
                 case "missile":
                     // 导弹生成
-                    Location missileLocation = new Location(player.getWorld(), Double.parseDouble(args[1]), Double.parseDouble(args[2]), Double.parseDouble(args[3]));
+                    Location missileLocation = new Location(player.getWorld(), Double.parseDouble(LocationPX(args[1])), Double.parseDouble(LocationPY(args[2])), Double.parseDouble(LocationPZ(args[3])));
                     player.sendMessage(ChatColor.GREEN + "You have chosen \"missile\".");
                     Missile missile = new Missile();
                     missile.summonRanged(player.getWorld(), missileLocation, Float.parseFloat(args[4]));
@@ -82,6 +85,47 @@ public class UGlobalWeaponCommand implements CommandExecutor {
             return false;
         }
 
+
         return true; // 表示指令已正确处理，无需显示帮助信息
+    }
+
+    // 处理坐标
+    public String LocationPX(String arg) {
+        float loc;
+
+        // 判断输入是否以 "~" 开头（代表相对坐标）
+        if (arg.startsWith("~")) {
+            // 去掉前面的 "~"
+            double offset = 0.0;
+            loc = (float) (MyPlayer.getLocation().getX() + offset);
+            return String.valueOf(loc);
+        }
+        return arg;
+    }
+
+    public String LocationPY(String arg) {
+        float loc;
+
+        // 判断输入是否以 "~" 开头（代表相对坐标）
+        if (arg.startsWith("~")) {
+            // 去掉前面的 "~"
+            double offset = 0.0;
+            loc = (float) (MyPlayer.getLocation().getY() + offset);
+            return String.valueOf(loc);
+        }
+        return arg;
+    }
+
+    public String LocationPZ(String arg) {
+        float loc;
+
+        // 判断输入是否以 "~" 开头（代表相对坐标）
+        if (arg.startsWith("~")) {
+            // 去掉前面的 "~"
+            double offset = 0.0;
+            loc = (float) (MyPlayer.getLocation().getZ() + offset);
+            return String.valueOf(loc);
+        }
+        return arg;
     }
 }
