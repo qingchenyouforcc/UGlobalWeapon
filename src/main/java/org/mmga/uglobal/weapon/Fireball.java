@@ -59,4 +59,6 @@ public class Fireball {
             }
         }.runTaskTimer(Weapon.getInstance(), 0L, 2L); // 0 tick 延时，2 tick 间隔执行
     }
+
+    public void summonFireball(World world, Location location, Vector direction, float Yield) {};
 }
