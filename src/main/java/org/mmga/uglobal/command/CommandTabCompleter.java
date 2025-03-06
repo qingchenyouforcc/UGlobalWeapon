@@ -72,8 +72,10 @@ public class CommandTabCompleter implements TabCompleter {
         // 威力提示
         if (args.length == 5) {
             List<String> completions = new ArrayList<>();
-            completions.add("missile");
-            completions.add("nuclear");
+            completions.add("50");
+            completions.add("80");
+            completions.add("100");
+            completions.add("150");
 
             // 根据玩家当前输入过滤（忽略大小写）
             return completions.stream()
