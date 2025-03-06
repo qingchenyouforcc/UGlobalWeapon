@@ -33,6 +33,20 @@ public class CommandTabCompleter implements TabCompleter {
                     .collect(Collectors.toList());
         }
 
+        // 威力提示
+        if (args.length == 5) {
+            List<String> completions = new ArrayList<>();
+            completions.add("50");
+            completions.add("80");
+            completions.add("100");
+            completions.add("150");
+
+            // 根据玩家当前输入过滤（忽略大小写）
+            return completions.stream()
+                    .filter(s -> s.toLowerCase().startsWith(args[0].toLowerCase()))
+                    .collect(Collectors.toList());
+        }
+
         // 实现~补全
         if (!(sender instanceof Player player)) {
             return Collections.emptyList();
@@ -53,35 +67,21 @@ public class CommandTabCompleter implements TabCompleter {
         switch (coordIndex) {
             case 0: // X 坐标
                 if (input.startsWith("~")) {
-                    suggestion = "~" + ((int) loc.getX());
+                    suggestion = String.valueOf(((int) loc.getX()));
                 }
                 break;
             case 1: // Y 坐标
                 if (input.startsWith("~")) {
-                    suggestion = "~" + ((int) loc.getY());
+                    suggestion = String.valueOf(((int) loc.getY()));
                 }
                 break;
             case 2: // Z 坐标
                 if (input.startsWith("~")) {
-                    suggestion = "~" + ((int) loc.getZ());
+                    suggestion = String.valueOf(((int) loc.getZ()));
                 }
                 break;
             default:
                 break;
-        }
-
-        // 威力提示
-        if (args.length == 5) {
-            List<String> completions = new ArrayList<>();
-            completions.add("50");
-            completions.add("80");
-            completions.add("100");
-            completions.add("150");
-
-            // 根据玩家当前输入过滤（忽略大小写）
-            return completions.stream()
-                    .filter(s -> s.toLowerCase().startsWith(args[0].toLowerCase()))
-                    .collect(Collectors.toList());
         }
 
         // 如果补全建议与输入匹配，则返回建议列表
