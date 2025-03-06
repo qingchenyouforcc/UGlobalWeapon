@@ -12,7 +12,7 @@ import org.bukkit.persistence.PersistentDataType;
 import org.mmga.uglobal.Weapon;
 import org.mmga.uglobal.utils.WarningSoundSummon;
 import org.mmga.uglobal.weapon.Missile;
-import org.mmga.uglobal.weapon.Nuclear;
+import org.mmga.uglobal.weapon.Fireball;
 
 public class UGlobalWeaponCommand implements CommandExecutor {
 
@@ -26,7 +26,7 @@ public class UGlobalWeaponCommand implements CommandExecutor {
 
         // 检查是否有参数
         if (args.length == 0) {
-            player.sendMessage(ChatColor.RED + "Usage: /uglobalweapon <WeaponType> <x> <y> <z> <power>");
+            player.sendMessage(ChatColor.RED + "Usage: /uglobalweapon <WeaponType> (<x> <y> <z> <power>)");
             return false;
         }
 
@@ -55,8 +55,8 @@ public class UGlobalWeaponCommand implements CommandExecutor {
                     // 核弹生成 (temp)
                     Location location = new Location(player.getWorld(), Double.parseDouble(args[1]), Double.parseDouble(args[2]), Double.parseDouble(args[3]));
                     player.sendMessage(ChatColor.GREEN + "You have chosen \"nuclear\".");
-                    Nuclear nuclear = new Nuclear();
-                    nuclear.summonNuclear(player.getWorld(), location, Float.parseFloat(args[4]));
+                    Fireball nuclear = new Fireball();
+                    nuclear.summonRanged(player.getWorld(), location, Float.parseFloat(args[4]));
                     // 玩家提示（temp)
                     player.sendTitle(ChatColor.RED + "!!警告：已启用核打击!!", "将在" + location.getX() + " " + location.getZ() + "进行核打击", 10, 150, 10);
                     WarningSoundSummon.playNuclearSound(player, Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 70);
@@ -67,7 +67,7 @@ public class UGlobalWeaponCommand implements CommandExecutor {
                     Location missileLocation = new Location(player.getWorld(), Double.parseDouble(args[1]), Double.parseDouble(args[2]), Double.parseDouble(args[3]));
                     player.sendMessage(ChatColor.GREEN + "You have chosen \"missile\".");
                     Missile missile = new Missile();
-                    missile.summonNuclear(player.getWorld(), missileLocation, Float.parseFloat(args[4]));
+                    missile.summonRanged(player.getWorld(), missileLocation, Float.parseFloat(args[4]));
                     // 玩家提示
                     player.sendTitle(ChatColor.RED + "!!你已发射导弹!!", "将在" + missileLocation.getX() + " " + missileLocation.getZ() + "进行精准打击", 10, 100, 10);
                     WarningSoundSummon.playNuclearSound(player, Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 45);

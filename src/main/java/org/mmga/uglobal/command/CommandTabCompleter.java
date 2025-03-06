@@ -25,6 +25,7 @@ public class CommandTabCompleter implements TabCompleter {
             List<String> completions = new ArrayList<>();
             completions.add("missile");
             completions.add("nuclear");
+            completions.add("rpg");
 
             // 根据玩家当前输入过滤（忽略大小写）
             return completions.stream()

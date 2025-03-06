@@ -1,6 +1,5 @@
 package org.mmga.uglobal.event;
 
-import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
@@ -11,6 +10,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import org.mmga.uglobal.Weapon;
+import org.mmga.uglobal.weapon.RPG;
 
 import java.util.Objects;
 
@@ -27,7 +27,6 @@ public class PlayerInteractionEvent implements Listener {
         }
 
         Player player = event.getPlayer();
-        Location location = player.getLocation();
 
         // 获取主手物品
         ItemStack item = player.getInventory().getItemInMainHand();
@@ -43,10 +42,11 @@ public class PlayerInteractionEvent implements Listener {
                 // 获取 tag 的值
                 String tagValue = container.get(key, PersistentDataType.STRING);
                 if ("RPG".equals(tagValue)) {
-                    player.sendMessage("你使用了带有自定义 tag 的特殊物品！");
+                    RPG rpg = new RPG();
+                    rpg.summonRanged(player.getWorld(), player.getLocation(), 5);
+
                     // 停止继续执行默认行为
                     event.setCancelled(true);
-
                 }
             }
         }
