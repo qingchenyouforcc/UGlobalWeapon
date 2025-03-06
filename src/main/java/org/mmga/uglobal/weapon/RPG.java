@@ -26,7 +26,7 @@ public class RPG extends Fireball {
         fireball.setDirection(direction);
         fireball.setYield(Yield);
         fireball.setMetadata("Weapon", new FixedMetadataValue(Weapon.getInstance(), "Nuclear"));
-        Logger.getLogger("UGlobalWeapon").info("Summoning Nuclear: " + fireball.getMetadata("Weapon") + " at " + location.getX() + "," + location.getY() + "," + location.getZ());
+        Logger.getLogger("UGlobalWeapon").info("Summoning Fireball: " + fireball.getMetadata("Weapon") + " at " + location.getX() + "," + location.getY() + "," + location.getZ());
 
         // 创建一个定时任务，每隔2个 tick 检查火球的位置并生成粒子效果
         new BukkitRunnable() {
