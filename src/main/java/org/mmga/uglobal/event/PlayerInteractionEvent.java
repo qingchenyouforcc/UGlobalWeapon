@@ -1,5 +1,6 @@
 package org.mmga.uglobal.event;
 
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
@@ -9,6 +10,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
+import org.bukkit.util.Vector;
 import org.mmga.uglobal.Weapon;
 import org.mmga.uglobal.weapon.RPG;
 
@@ -43,7 +45,7 @@ public class PlayerInteractionEvent implements Listener {
                 String tagValue = container.get(key, PersistentDataType.STRING);
                 if ("RPG".equals(tagValue)) {
                     RPG rpg = new RPG();
-                    rpg.summonRanged(player.getWorld(), player.getLocation(), 5);
+                    rpg.summonRanged(player.getWorld(), player.getEyeLocation(), 5);
 
                     // 停止继续执行默认行为
                     event.setCancelled(true);
