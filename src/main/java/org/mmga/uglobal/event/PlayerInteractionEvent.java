@@ -49,7 +49,7 @@ public class PlayerInteractionEvent implements Listener {
                     // 检查玩家是否在冷却中
                     if (RPGcooldownManager.isOnCooldown(player)) {
                         long remaining = RPGcooldownManager.getRemainingTime(player);
-                        player.sendMessage("技能正在冷却中，请等待 " + remaining + " 秒！");
+                        player.sendMessage("武器正在冷却中，请等待 " + remaining + " 秒！");
                         event.setCancelled(true);
                         return;
                     }
