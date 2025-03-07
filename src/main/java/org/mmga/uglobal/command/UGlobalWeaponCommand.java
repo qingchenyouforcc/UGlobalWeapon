@@ -85,7 +85,6 @@ public class UGlobalWeaponCommand implements CommandExecutor {
             return false;
         }
 
-
         return true; // 表示指令已正确处理，无需显示帮助信息
     }
 

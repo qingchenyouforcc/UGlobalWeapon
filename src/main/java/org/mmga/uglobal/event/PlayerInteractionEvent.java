@@ -10,11 +10,15 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import org.mmga.uglobal.Weapon;
+import org.mmga.uglobal.manager.CooldownManager;
 import org.mmga.uglobal.weapon.RPG;
 
 import java.util.Objects;
 
 public class PlayerInteractionEvent implements Listener {
+    // 设置冷却时间
+    private final CooldownManager RPGcooldownManager = new CooldownManager(5);
+
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent event) {
         // 检查玩家是否右键点击
@@ -42,6 +46,14 @@ public class PlayerInteractionEvent implements Listener {
                 // 获取 tag 的值
                 String tagValue = container.get(key, PersistentDataType.STRING);
                 if ("RPG".equals(tagValue)) {
+                    RPGcooldownManager.setCooldown(player);
+                    // 检查玩家是否在冷却中
+                    if (RPGcooldownManager.isOnCooldown(player)) {
+                        long remaining = RPGcooldownManager.getRemainingTime(player);
+                        player.sendMessage("技能正在冷却中，请等待 " + remaining + " 秒！");
+                        event.setCancelled(true);
+                    }
+
                     RPG rpg = new RPG();
                     rpg.summonRanged(player.getWorld(), player.getEyeLocation(), 5);
 
