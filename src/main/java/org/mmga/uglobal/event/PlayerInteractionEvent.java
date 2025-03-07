@@ -46,16 +46,17 @@ public class PlayerInteractionEvent implements Listener {
                 // 获取 tag 的值
                 String tagValue = container.get(key, PersistentDataType.STRING);
                 if ("RPG".equals(tagValue)) {
-                    RPGcooldownManager.setCooldown(player);
                     // 检查玩家是否在冷却中
                     if (RPGcooldownManager.isOnCooldown(player)) {
                         long remaining = RPGcooldownManager.getRemainingTime(player);
                         player.sendMessage("技能正在冷却中，请等待 " + remaining + " 秒！");
                         event.setCancelled(true);
+                        return;
                     }
 
                     RPG rpg = new RPG();
                     rpg.summonRanged(player.getWorld(), player.getEyeLocation(), 5);
+                    RPGcooldownManager.setCooldown(player);
 
                     // 停止继续执行默认行为
                     event.setCancelled(true);
