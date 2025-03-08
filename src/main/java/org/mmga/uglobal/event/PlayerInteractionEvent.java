@@ -1,5 +1,6 @@
 package org.mmga.uglobal.event;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
@@ -7,6 +8,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import org.mmga.uglobal.Weapon;
@@ -18,6 +20,21 @@ import java.util.Objects;
 public class PlayerInteractionEvent implements Listener {
     // 设置冷却时间
     private final CooldownManager RPGcooldownManager = new CooldownManager(5);
+
+    public boolean hasItem(Player player, Material material, int amount) {
+        if (player == null) {
+            return false;
+        }
+        PlayerInventory inventory = player.getInventory();
+        return inventory.contains(material, amount);
+    }
+
+    public void removeItemFromInventory(Player player, Material material, int amount) {
+        // 构造要删除的物品
+        ItemStack itemToRemove = new ItemStack(material, amount);
+        // 尝试从玩家的背包中移除该物品
+        player.getInventory().removeItem(itemToRemove);
+    }
 
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent event) {
@@ -49,7 +66,14 @@ public class PlayerInteractionEvent implements Listener {
                     // 检查玩家是否在冷却中
                     if (RPGcooldownManager.isOnCooldown(player)) {
                         long remaining = RPGcooldownManager.getRemainingTime(player);
-                        player.sendMessage("武器正在冷却中，请等待 " + remaining + " 秒！");
+                        player.sendMessage(ChatColor.RED + "RPG正在冷却中，请等待 " + remaining + " 秒！");
+                        event.setCancelled(true);
+                        return;
+                    }
+                    if (hasItem(player, Material.FIRE_CHARGE, 1)) {
+                        removeItemFromInventory(player, Material.FIRE_CHARGE, 1);
+                    } else {
+                        player.sendMessage(ChatColor.RED + "你没有足够的火焰弹作为RPG弹药！");
                         event.setCancelled(true);
                         return;
                     }
