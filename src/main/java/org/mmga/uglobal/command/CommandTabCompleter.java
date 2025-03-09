@@ -71,11 +71,8 @@ public class CommandTabCompleter implements TabCompleter {
                         break;
                 }
             }
-        }
-
-        // 威力提示
-        if (args.length == 5) {
-            if (args[0].equalsIgnoreCase("missile") || args[0].equalsIgnoreCase("nuclear")) {
+            // 威力提示
+            if (args.length == 5) {
                 List<String> completions = new ArrayList<>();
                 completions.add("50");
                 completions.add("80");
@@ -86,8 +83,10 @@ public class CommandTabCompleter implements TabCompleter {
                 return completions.stream()
                         .filter(s -> s.toLowerCase().startsWith(args[4].toLowerCase()))
                         .collect(Collectors.toList());
+
             }
         }
+
 
         // 实现~补全
         if (!(sender instanceof Player player)) {
