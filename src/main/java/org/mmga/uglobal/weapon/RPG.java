@@ -38,20 +38,20 @@ public class RPG extends Fireball {
                     return;
                 }
 
-                fireball.getWorld().spawnParticle(
-                        Particle.EXPLOSION,              // 粒子类型
-                        fireball.getLocation(),      // 粒子生成位置
-                        2,                          // 粒子数量
-                        -0.3, -0.3, -0.3,               // X、Y、Z 方向扩散范围
-                        0.01                         // 粒子速度
-                );
 //                fireball.getWorld().spawnParticle(
-//                        Particle.FLAME,              // 粒子类型
+//                        Particle.WHITE_SMOKE,              // 粒子类型
 //                        fireball.getLocation(),      // 粒子生成位置
-//                        20,                          // 粒子数量
-//                        0.6, 0.6, 0.6,               // X、Y、Z 方向扩散范围
+//                        2,                          // 粒子数量
+//                        -0.3, -0.3, -0.3,               // X、Y、Z 方向扩散范围
 //                        0.01                         // 粒子速度
 //                );
+                fireball.getWorld().spawnParticle(
+                        Particle.WHITE_SMOKE,              // 粒子类型
+                        fireball.getLocation(),      // 粒子生成位置
+                        100,                          // 粒子数量
+                        0.5, 0.5, 0.5,               // X、Y、Z 方向扩散范围
+                        0.01                         // 粒子速度
+                );
                 fireball.getWorld().spawnParticle(
                         Particle.SMOKE,
                         fireball.getLocation(),

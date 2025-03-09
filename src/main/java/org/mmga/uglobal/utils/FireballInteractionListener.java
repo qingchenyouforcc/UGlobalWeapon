@@ -32,6 +32,7 @@ public class FireballInteractionListener implements Listener {
         if (entity instanceof Fireball && Objects.equals(customValue, "Nuclear")) {
             event.setCancelled(true);
             ((Fireball) entity).setDirection(new Vector(0, -1, 0));
+            System.out.println("取消成功");
         }
     }
 }

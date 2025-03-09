@@ -42,6 +42,9 @@ public class UGlobalWeaponCommand implements CommandExecutor {
                 case "rpg":
                     // 获得rpg
                     switch (args[1]) {
+                        case "null":
+                            player.getInventory().addItem(CreateRPG("null"));
+                            break;
                         case "normal":
                             player.getInventory().addItem(CreateRPG("normal"));
                             break;
