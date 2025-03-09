@@ -33,8 +33,9 @@ public class CommandTabCompleter implements TabCompleter {
                     .collect(Collectors.toList());
         }
 
-        if (args[1].equalsIgnoreCase("rpg")) {
-            if (args.length == 2) {
+
+        if (args.length == 2) {
+            if (args[0].equalsIgnoreCase("rpg")) {
                 List<String> completions = new ArrayList<>();
                 completions.add("normal");
                 completions.add("small");
@@ -48,18 +49,44 @@ public class CommandTabCompleter implements TabCompleter {
             }
         }
 
+        if (args[0].equalsIgnoreCase("missile") || args[0].equalsIgnoreCase("nuclear")) {
+            // 坐标提示
+            if (args.length == 2 || args.length == 4 || args.length == 3) {
+                List<String> completions = new ArrayList<>();
+                completions.add("~");
+                switch (args.length) {
+                    case 2:
+                        return completions.stream()
+                                .filter(s -> s.toLowerCase().startsWith(args[1].toLowerCase()))
+                                .collect(Collectors.toList());
+                    case 3:
+                        return completions.stream()
+                                .filter(s -> s.toLowerCase().startsWith(args[2].toLowerCase()))
+                                .collect(Collectors.toList());
+                    case 4:
+                        return completions.stream()
+                                .filter(s -> s.toLowerCase().startsWith(args[3].toLowerCase()))
+                                .collect(Collectors.toList());
+                    default:
+                        break;
+                }
+            }
+        }
+
         // 威力提示
         if (args.length == 5) {
-            List<String> completions = new ArrayList<>();
-            completions.add("50");
-            completions.add("80");
-            completions.add("100");
-            completions.add("150");
+            if (args[0].equalsIgnoreCase("missile") || args[0].equalsIgnoreCase("nuclear")) {
+                List<String> completions = new ArrayList<>();
+                completions.add("50");
+                completions.add("80");
+                completions.add("100");
+                completions.add("150");
 
-            // 根据玩家当前输入过滤（忽略大小写）
-            return completions.stream()
-                    .filter(s -> s.toLowerCase().startsWith(args[4].toLowerCase()))
-                    .collect(Collectors.toList());
+                // 根据玩家当前输入过滤（忽略大小写）
+                return completions.stream()
+                        .filter(s -> s.toLowerCase().startsWith(args[4].toLowerCase()))
+                        .collect(Collectors.toList());
+            }
         }
 
         // 实现~补全

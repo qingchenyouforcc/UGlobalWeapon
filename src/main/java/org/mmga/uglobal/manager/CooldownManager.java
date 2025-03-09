@@ -63,9 +63,9 @@ public class CooldownManager {
     /**
      * 设置玩家的冷却，记录当前使用时间
      *
-     * @param seconds 冷却时间
+     * @param cooldownTimeSeconds 冷却时间
      */
-    public void setItemCooldown(long seconds) {
-        this.cooldownTimeMillis = seconds;
+    public void setItemCooldown(long cooldownTimeSeconds) {
+        this.cooldownTimeMillis = cooldownTimeSeconds * 1000;
     }
 }

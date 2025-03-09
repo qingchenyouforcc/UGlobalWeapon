@@ -21,10 +21,10 @@ import java.util.Objects;
 public class PlayerInteractionEvent implements Listener {
     // 设置rpg类型 [爆炸范围, 冷却时间]
     Map<String, int[]> RPGConfig = Map.of(
-            "normal", new int[]{5, 5},
-            "small", new int[]{3, 5},
-            "medium", new int[]{7, 5},
-            "large", new int[]{15, 10}
+            ChatColor.RED + "RPG_" + "normal", new int[]{5, 5},
+            ChatColor.RED + "RPG_" + "small", new int[]{3, 5},
+            ChatColor.RED + "RPG_" + "medium", new int[]{7, 5},
+            ChatColor.RED + "RPG_" + "large", new int[]{15, 10}
     );
 
     // 设置冷却时间

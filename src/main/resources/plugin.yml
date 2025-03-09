@@ -1,4 +1,4 @@
-name: weapon
+name: uGlobalWeapon
 version: '1.0-SNAPSHOT'
 main: org.mmga.uglobal.Weapon
 api-version: '1.21'
