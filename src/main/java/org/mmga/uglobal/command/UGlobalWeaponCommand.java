@@ -40,20 +40,26 @@ public class UGlobalWeaponCommand implements CommandExecutor {
         try {
             switch (parameter.toLowerCase()) {
                 case "rpg":
-                    ItemStack item = new ItemStack(Material.NETHER_STAR, 1);
-                    ItemMeta meta = item.getItemMeta();
-                    if (meta != null) {
-                        // 使用 NamespacedKey 定义一个唯一标识符
-                        NamespacedKey key = new NamespacedKey(Weapon.getInstance(), "special_item");
-                        PersistentDataContainer container = meta.getPersistentDataContainer();
-                        // 存储一个字符串作为自定义标记
-                        container.set(key, PersistentDataType.STRING, "RPG");
-                        meta.setDisplayName(ChatColor.RED + "RPG");
-                        item.setItemMeta(meta);
+                    // 获得rpg
+                    switch (args[1]) {
+                        case "normal":
+                            player.getInventory().addItem(CreateRPG("normal"));
+                            break;
+                        case "small":
+                            player.getInventory().addItem(CreateRPG("small"));
+                            break;
+                        case "medium":
+                            player.getInventory().addItem(CreateRPG("medium"));
+                            break;
+                        case "large":
+                            player.getInventory().addItem(CreateRPG("large"));
+                            break;
+                        default:
+                            player.sendMessage(ChatColor.RED + "Invalid parameter!");
+                            break;
                     }
-                    item.setItemMeta(meta);
-                    player.getInventory().addItem(item);
                     break;
+
                 case "nuclear":
                     // 核弹生成 (temp)
                     Location location = new Location(player.getWorld(), Double.parseDouble(LocationPX(args[1])), Double.parseDouble(LocationPY(args[2])), Double.parseDouble(LocationPZ(args[3])));
@@ -86,6 +92,23 @@ public class UGlobalWeaponCommand implements CommandExecutor {
         }
 
         return true; // 表示指令已正确处理，无需显示帮助信息
+    }
+
+    // 处理生成物品
+    public ItemStack CreateRPG(String type) {
+        ItemStack RPGItem = new ItemStack(Material.NETHER_STAR, 1);
+        ItemMeta RPG_Mate = RPGItem.getItemMeta();
+        if (RPG_Mate != null) {
+            // 使用 NamespacedKey 定义一个唯一标识符
+            NamespacedKey key = new NamespacedKey(Weapon.getInstance(), "special_item");
+            PersistentDataContainer container = RPG_Mate.getPersistentDataContainer();
+            // 存储一个字符串作为自定义标记
+            container.set(key, PersistentDataType.STRING, "RPG");
+            RPG_Mate.setDisplayName(ChatColor.RED + "RPG_" + type);
+            RPGItem.setItemMeta(RPG_Mate);
+        }
+        RPGItem.setItemMeta(RPG_Mate);
+        return RPGItem;
     }
 
     // 处理坐标

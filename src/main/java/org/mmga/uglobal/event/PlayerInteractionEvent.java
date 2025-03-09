@@ -15,11 +15,20 @@ import org.mmga.uglobal.Weapon;
 import org.mmga.uglobal.manager.CooldownManager;
 import org.mmga.uglobal.weapon.RPG;
 
+import java.util.Map;
 import java.util.Objects;
 
 public class PlayerInteractionEvent implements Listener {
+    // 设置rpg类型 [爆炸范围, 冷却时间]
+    Map<String, int[]> RPGConfig = Map.of(
+            "normal", new int[]{5, 5},
+            "small", new int[]{3, 5},
+            "medium", new int[]{7, 5},
+            "large", new int[]{15, 10}
+    );
+
     // 设置冷却时间
-    private final CooldownManager RPGcooldownManager = new CooldownManager(5);
+    private final CooldownManager RPGcooldownManager =  new CooldownManager(10);
 
     public boolean hasItem(Player player, Material material, int amount) {
         if (player == null) {
@@ -78,9 +87,20 @@ public class PlayerInteractionEvent implements Listener {
                         return;
                     }
 
-                    RPG rpg = new RPG();
-                    rpg.summonRanged(player.getWorld(), player.getEyeLocation(), 5);
-                    RPGcooldownManager.setCooldown(player);
+                    // 获取武器类型
+                    String weaponType = item.getItemMeta().getDisplayName();
+
+                    // 检查武器类型是否存在于配置中，若存在则应用相应的设置
+                    if (RPGConfig.containsKey(weaponType)) {
+                        RPG rpg = new RPG();
+                        int[] config = RPGConfig.get(weaponType);
+                        int range = config[0];
+                        int cooldown = config[1];
+
+                        rpg.summonRanged(player.getWorld(), player.getEyeLocation(), range);
+                        RPGcooldownManager.setItemCooldown(cooldown);
+                        RPGcooldownManager.setCooldown(player);
+                    }
 
                     // 停止继续执行默认行为
                     event.setCancelled(true);

@@ -33,6 +33,21 @@ public class CommandTabCompleter implements TabCompleter {
                     .collect(Collectors.toList());
         }
 
+        if (args[1].equalsIgnoreCase("rpg")) {
+            if (args.length == 2) {
+                List<String> completions = new ArrayList<>();
+                completions.add("normal");
+                completions.add("small");
+                completions.add("medium");
+                completions.add("large");
+
+                // 根据玩家当前输入过滤（忽略大小写）
+                return completions.stream()
+                        .filter(s -> s.toLowerCase().startsWith(args[1].toLowerCase()))
+                        .collect(Collectors.toList());
+            }
+        }
+
         // 威力提示
         if (args.length == 5) {
             List<String> completions = new ArrayList<>();

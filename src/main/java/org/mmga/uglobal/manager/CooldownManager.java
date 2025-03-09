@@ -10,7 +10,7 @@ public class CooldownManager {
     // 储存玩家冷却时间
     private final Map<UUID, Long> cooldowns = new HashMap<>();
     // 冷却时长（单位：毫秒）
-    private final long cooldownTimeMillis;
+    private long cooldownTimeMillis;
 
     /**
      * @param cooldownTimeSeconds 冷却时长（单位：秒）
@@ -58,5 +58,14 @@ public class CooldownManager {
      */
     public void setCooldown(Player player) {
         cooldowns.put(player.getUniqueId(), System.currentTimeMillis());
+    }
+
+    /**
+     * 设置玩家的冷却，记录当前使用时间
+     *
+     * @param seconds 冷却时间
+     */
+    public void setItemCooldown(long seconds) {
+        this.cooldownTimeMillis = seconds;
     }
 }
