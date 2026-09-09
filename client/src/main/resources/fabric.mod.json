@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "uglobalweapon_client",
+  "version": "1.4.0",
+  "name": "UGlobalWeapon Client Animations",
+  "description": "UGlobalWeapon models, matte launcher surfaces and Annihilation cinematic effects. Weapon gameplay requires the matching Paper plugin.",
+  "environment": "client",
+  "entrypoints": {"client":["org.mmga.uglobal.client.ChargeInput"]},
+  "mixins": ["uglobalweapon-client.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.16.14",
+    "fabric-networking-api-v1": "*",
+    "minecraft": "1.21.1",
+    "java": ">=21"
+  }
+}

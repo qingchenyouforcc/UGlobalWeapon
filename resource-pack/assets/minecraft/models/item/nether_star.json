@@ -1,0 +1,464 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "item/nether_star"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "custom_model_data": 1001
+      },
+      "model": "uglobalweapon:item/rpg_idle"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1002
+      },
+      "model": "uglobalweapon:item/rpg_raise_1"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1003
+      },
+      "model": "uglobalweapon:item/rpg_raise_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1004
+      },
+      "model": "uglobalweapon:item/rpg_raise_3"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1005
+      },
+      "model": "uglobalweapon:item/rpg_raise_4"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1006
+      },
+      "model": "uglobalweapon:item/rpg_raise_5"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1020
+      },
+      "model": "uglobalweapon:item/rpg_recoil_1"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1021
+      },
+      "model": "uglobalweapon:item/rpg_recoil_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1022
+      },
+      "model": "uglobalweapon:item/rpg_recoil_3"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1023
+      },
+      "model": "uglobalweapon:item/rpg_recoil_4"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1101
+      },
+      "model": "uglobalweapon:item/rpg_idle_heat_1"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1102
+      },
+      "model": "uglobalweapon:item/rpg_raise_1_heat_1"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1103
+      },
+      "model": "uglobalweapon:item/rpg_raise_2_heat_1"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1104
+      },
+      "model": "uglobalweapon:item/rpg_raise_3_heat_1"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1105
+      },
+      "model": "uglobalweapon:item/rpg_raise_4_heat_1"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1106
+      },
+      "model": "uglobalweapon:item/rpg_raise_5_heat_1"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1120
+      },
+      "model": "uglobalweapon:item/rpg_recoil_1_heat_1"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1121
+      },
+      "model": "uglobalweapon:item/rpg_recoil_2_heat_1"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1122
+      },
+      "model": "uglobalweapon:item/rpg_recoil_3_heat_1"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1123
+      },
+      "model": "uglobalweapon:item/rpg_recoil_4_heat_1"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1201
+      },
+      "model": "uglobalweapon:item/rpg_idle_heat_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1202
+      },
+      "model": "uglobalweapon:item/rpg_raise_1_heat_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1203
+      },
+      "model": "uglobalweapon:item/rpg_raise_2_heat_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1204
+      },
+      "model": "uglobalweapon:item/rpg_raise_3_heat_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1205
+      },
+      "model": "uglobalweapon:item/rpg_raise_4_heat_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1206
+      },
+      "model": "uglobalweapon:item/rpg_raise_5_heat_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1220
+      },
+      "model": "uglobalweapon:item/rpg_recoil_1_heat_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1221
+      },
+      "model": "uglobalweapon:item/rpg_recoil_2_heat_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1222
+      },
+      "model": "uglobalweapon:item/rpg_recoil_3_heat_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1223
+      },
+      "model": "uglobalweapon:item/rpg_recoil_4_heat_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1301
+      },
+      "model": "uglobalweapon:item/rpg_idle_heat_3"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1302
+      },
+      "model": "uglobalweapon:item/rpg_raise_1_heat_3"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1303
+      },
+      "model": "uglobalweapon:item/rpg_raise_2_heat_3"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1304
+      },
+      "model": "uglobalweapon:item/rpg_raise_3_heat_3"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1305
+      },
+      "model": "uglobalweapon:item/rpg_raise_4_heat_3"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1306
+      },
+      "model": "uglobalweapon:item/rpg_raise_5_heat_3"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1320
+      },
+      "model": "uglobalweapon:item/rpg_recoil_1_heat_3"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1321
+      },
+      "model": "uglobalweapon:item/rpg_recoil_2_heat_3"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1322
+      },
+      "model": "uglobalweapon:item/rpg_recoil_3_heat_3"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1323
+      },
+      "model": "uglobalweapon:item/rpg_recoil_4_heat_3"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3001
+      },
+      "model": "uglobalweapon:item/annihilation_idle"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3002
+      },
+      "model": "uglobalweapon:item/annihilation_raise_0"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3003
+      },
+      "model": "uglobalweapon:item/annihilation_raise_1"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3004
+      },
+      "model": "uglobalweapon:item/annihilation_raise_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3005
+      },
+      "model": "uglobalweapon:item/annihilation_raise_3"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3006
+      },
+      "model": "uglobalweapon:item/annihilation_raise_4"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3020
+      },
+      "model": "uglobalweapon:item/annihilation_recoil_0"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3021
+      },
+      "model": "uglobalweapon:item/annihilation_recoil_1"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3022
+      },
+      "model": "uglobalweapon:item/annihilation_recoil_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3023
+      },
+      "model": "uglobalweapon:item/annihilation_recoil_3"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3040
+      },
+      "model": "uglobalweapon:item/annihilation_charge_0"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3041
+      },
+      "model": "uglobalweapon:item/annihilation_charge_1"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3042
+      },
+      "model": "uglobalweapon:item/annihilation_charge_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3043
+      },
+      "model": "uglobalweapon:item/annihilation_charge_3"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3044
+      },
+      "model": "uglobalweapon:item/annihilation_charge_4"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3045
+      },
+      "model": "uglobalweapon:item/annihilation_charge_5"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3046
+      },
+      "model": "uglobalweapon:item/annihilation_charge_6"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3047
+      },
+      "model": "uglobalweapon:item/annihilation_charge_7"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3048
+      },
+      "model": "uglobalweapon:item/annihilation_charge_8"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3049
+      },
+      "model": "uglobalweapon:item/annihilation_charge_9"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3050
+      },
+      "model": "uglobalweapon:item/annihilation_charge_10"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3051
+      },
+      "model": "uglobalweapon:item/annihilation_charge_11"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3060
+      },
+      "model": "uglobalweapon:item/annihilation_cool_0"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3061
+      },
+      "model": "uglobalweapon:item/annihilation_cool_1"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3062
+      },
+      "model": "uglobalweapon:item/annihilation_cool_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3063
+      },
+      "model": "uglobalweapon:item/annihilation_cool_3"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3064
+      },
+      "model": "uglobalweapon:item/annihilation_cool_4"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3065
+      },
+      "model": "uglobalweapon:item/annihilation_cool_5"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3066
+      },
+      "model": "uglobalweapon:item/annihilation_cool_6"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3067
+      },
+      "model": "uglobalweapon:item/annihilation_cool_7"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3068
+      },
+      "model": "uglobalweapon:item/annihilation_cool_8"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3069
+      },
+      "model": "uglobalweapon:item/annihilation_cool_9"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3070
+      },
+      "model": "uglobalweapon:item/annihilation_cool_10"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3071
+      },
+      "model": "uglobalweapon:item/annihilation_cool_11"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 4001
+      },
+      "model": "uglobalweapon:item/annihilation_sphere"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 4002
+      },
+      "model": "uglobalweapon:item/annihilation_beam"
+    }
+  ]
+}

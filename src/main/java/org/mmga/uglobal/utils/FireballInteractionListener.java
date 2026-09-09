@@ -16,6 +16,10 @@ public class FireballInteractionListener implements Listener {
     @EventHandler
     public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
         Entity entity = event.getEntity();
+        if (entity instanceof Fireball && org.mmga.uglobal.weapon.RPG.isProjectile(entity)) {
+            event.setCancelled(true);
+            return;
+        }
         List<MetadataValue> metadataList = entity.getMetadata("Weapon");
         String customValue = null;
 

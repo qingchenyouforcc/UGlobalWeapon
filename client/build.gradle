@@ -1,0 +1,73 @@
+plugins {
+    id 'fabric-loom' version '1.10.5'
+}
+
+version = '1.4.0'
+group = 'org.mmga.uglobal'
+
+// Include weapon geometry/textures so the deployed mod carries the matching assets.
+sourceSets.main.resources.srcDir('../resource-pack')
+tasks.named('processResources') { exclude 'pack.mcmeta' }
+
+dependencies {
+    minecraft 'com.mojang:minecraft:1.21.1'
+    mappings 'net.fabricmc:yarn:1.21.1+build.3:v2'
+    modImplementation 'net.fabricmc:fabric-loader:0.16.14'
+    def cachedApi = file('../run/dependencies/fabric-api')
+    if (new File(cachedApi, 'fabric-networking-api-v1-0.116.5.jar').isFile()
+            && new File(cachedApi, 'fabric-api-base-0.116.5.jar').isFile()) {
+        modImplementation files(new File(cachedApi, 'fabric-api-base-0.116.5.jar'),
+                new File(cachedApi, 'fabric-networking-api-v1-0.116.5.jar'))
+    } else {
+        modImplementation 'net.fabricmc.fabric-api:fabric-api:0.116.5+1.21.1'
+    }
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+    withSourcesJar()
+}
+tasks.withType(JavaCompile).configureEach {
+    options.release = 21
+    options.encoding = 'UTF-8'
+}
+
+tasks.register('verifyClientJar') {
+    dependsOn tasks.named('remapJar')
+    doLast {
+        def artifact = tasks.named('remapJar').get().archiveFile.get().asFile
+        new java.util.zip.ZipFile(artifact).withCloseable { zip ->
+            ['fabric.mod.json', 'uglobalweapon-client.mixins.json',
+             'org/mmga/uglobal/client/mixin/HeldItemRendererMixin.class',
+             'org/mmga/uglobal/client/mixin/CameraMixin.class',
+             'org/mmga/uglobal/client/mixin/HotBarrelMixin.class'].each { path ->
+                if (zip.getEntry(path) == null) throw new GradleException("Missing artifact entry: ${path}")
+            }
+            def metadata = new groovy.json.JsonSlurper().parse(zip.getInputStream(zip.getEntry('fabric.mod.json')))
+            if (metadata.environment != 'client') throw new GradleException('Mod must remain client-only')
+            def mixins = new groovy.json.JsonSlurper().parse(zip.getInputStream(zip.getEntry('uglobalweapon-client.mixins.json')))
+            if (!mixins.refmap || zip.getEntry(mixins.refmap) == null) throw new GradleException('Missing Mixin refmap')
+            def mapping = zip.getInputStream(zip.getEntry(mixins.refmap)).getText('UTF-8')
+            ['updateHeldItems', 'resetEquipProgress', 'renderItem('].each { hook ->
+                if (!mapping.contains(hook)) throw new GradleException("Missing animation hook mapping: ${hook}")
+            }
+            if (!mapping.contains('CameraMixin')) throw new GradleException('Missing camera shake mappings')
+            if (!mapping.contains('renderBakedItemQuads')) throw new GradleException('Missing heat light mappings')
+            def code = zip.getInputStream(zip.getEntry('org/mmga/uglobal/client/mixin/HeldItemRendererMixin.class')).getText('ISO-8859-1')
+            if (!code.contains('field_4047') || !code.contains('net/minecraft/class_1799')) {
+                throw new GradleException('Client bytecode was not remapped to intermediary')
+            }
+        }
+        logger.lifecycle("Verified client-only mod and remapped animation mixin: ${artifact.name}")
+    }
+}
+tasks.named('build') { dependsOn tasks.named('verifyClientJar') }
+tasks.register('verifyShake', JavaExec) {
+    dependsOn tasks.named('testClasses')
+    // This deterministic check needs no Minecraft launcher or test framework.
+    classpath = files(sourceSets.test.output, sourceSets.main.output)
+    mainClass = 'org.mmga.uglobal.client.ShotEnvelopeTest'
+}
+tasks.named('test') { exclude '**/ShotEnvelopeTest.class' }
+tasks.named('check') { dependsOn tasks.named('verifyShake') }
