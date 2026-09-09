@@ -3,6 +3,7 @@ package org.mmga.uglobal.event;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.Particle;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -14,6 +15,10 @@ import org.bukkit.persistence.PersistentDataType;
 import org.mmga.uglobal.Weapon;
 import org.mmga.uglobal.manager.CooldownManager;
 import org.mmga.uglobal.weapon.RPG;
+import org.mmga.uglobal.weapon.Gun;
+import org.mmga.uglobal.weapon.RpgEffects;
+import org.mmga.uglobal.weapon.RocketAmmo;
+import org.mmga.uglobal.utils.RpgAnimation;
 
 import java.util.Map;
 import java.util.Objects;
@@ -59,6 +64,9 @@ public class PlayerInteractionEvent implements Listener {
 
         Player player = event.getPlayer();
 
+        // Ignore off-hand duplicate interaction events.
+        if (event.getHand() != org.bukkit.inventory.EquipmentSlot.HAND) return;
+
         // 获取主手物品
         ItemStack item = player.getInventory().getItemInMainHand();
         if (item.getType() == Material.AIR) {
@@ -73,18 +81,23 @@ public class PlayerInteractionEvent implements Listener {
                 // 获取 tag 的值
                 String tagValue = container.get(key, PersistentDataType.STRING);
                 if ("RPG".equals(tagValue)) {
-                    // 检查玩家是否在冷却中
-                    if (RPGcooldownManager.isOnCooldown(player)) {
-                        long remaining = RPGcooldownManager.getRemainingTime(player);
-                        player.sendMessage(ChatColor.RED + "RPG正在冷却中，请等待 " + remaining + " 秒！");
-                        event.setCancelled(true);
+                    event.setCancelled(true);
+                    if (org.mmga.uglobal.weapon.Annihilation.isWeapon(item)) {
+                        // Charged fire is now driven by explicit client hold/release packets.
                         return;
                     }
-                    if (hasItem(player, Material.FIRE_CHARGE, 1)) {
-                        removeItemFromInventory(player, Material.FIRE_CHARGE, 1);
-                    } else {
-                        player.sendMessage(ChatColor.RED + "你没有足够的火焰弹作为RPG弹药！");
-                        event.setCancelled(true);
+                    // The raise animation is a real safety gate: clicking during it is silent.
+                    if (!RpgAnimation.isReady(player)) {
+                        if (!RpgAnimation.isAnimating(player)) RpgAnimation.raise(player, item);
+                        return;
+                    }
+                    // 检查玩家是否在冷却中
+                    if (RPGcooldownManager.isOnCooldown(player)) {
+                        return;
+                    }
+                    int ammoSlot=RocketAmmo.find(player);
+                    if (ammoSlot<0) {
+                        player.playSound(player.getLocation(), org.bukkit.Sound.BLOCK_DISPENSER_FAIL, .35F, .7F);
                         return;
                     }
 
@@ -98,13 +111,16 @@ public class PlayerInteractionEvent implements Listener {
                         int range = config[0];
                         int cooldown = config[1];
 
-                        rpg.summonRanged(player.getWorld(), player.getEyeLocation(), range);
-                        RPGcooldownManager.setItemCooldown(cooldown);
-                        RPGcooldownManager.setCooldown(player);
+                        String weaponName = item.getItemMeta().getDisplayName();
+                        org.bukkit.util.Vector direction = Gun.applySpread(player, weaponName, player.getEyeLocation().getDirection());
+                        if (!rpg.launch(player, direction, range)) return;
+                        ItemStack ammo=player.getInventory().getItem(ammoSlot);
+                        ammo.setAmount(ammo.getAmount()-1);
+                        player.getInventory().setItem(ammoSlot,ammo);
+                        RPGcooldownManager.setCooldown(player, cooldown);
+                        RpgEffects.fired(player, RPGcooldownManager);
+                        RpgAnimation.recoil(player, item);
                     }
-
-                    // 停止继续执行默认行为
-                    event.setCancelled(true);
                 }
             }
         }

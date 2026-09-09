@@ -1,0 +1,39 @@
+{
+  "parent": "uglobalweapon:item/rpg_idle_heat_2",
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        -90,
+        0
+      ],
+      "translation": [
+        1.5,
+        3.5,
+        1.5
+      ],
+      "scale": [
+        0.95,
+        0.95,
+        0.95
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        0,
+        90,
+        0
+      ],
+      "translation": [
+        1.5,
+        3.5,
+        1.5
+      ],
+      "scale": [
+        0.95,
+        0.95,
+        0.95
+      ]
+    }
+  }
+}

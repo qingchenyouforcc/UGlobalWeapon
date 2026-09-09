@@ -26,6 +26,9 @@ public class CommandTabCompleter implements TabCompleter {
             completions.add("missile");
             completions.add("nuclear");
             completions.add("rpg");
+            completions.add("ammo");
+            completions.add("annihilation");
+            completions.add("寂灭");
 
             // 根据玩家当前输入过滤（忽略大小写）
             return completions.stream()
@@ -35,6 +38,7 @@ public class CommandTabCompleter implements TabCompleter {
 
 
         if (args.length == 2) {
+            if (args[0].equalsIgnoreCase("ammo")) return List.of("1","16","64").stream().filter(s -> s.startsWith(args[1])).toList();
             if (args[0].equalsIgnoreCase("rpg")) {
                 List<String> completions = new ArrayList<>();
                 completions.add("normal");

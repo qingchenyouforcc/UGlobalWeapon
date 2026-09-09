@@ -1,0 +1,5 @@
+name: EffectsSmoke
+version: '1.0'
+main: EffectsSmoke
+api-version: '1.21'
+depend: [uGlobalWeapon]

@@ -9,6 +9,7 @@ import java.util.UUID;
 public class CooldownManager {
     // 储存玩家冷却时间
     private final Map<UUID, Long> cooldowns = new HashMap<>();
+    private final Map<UUID, Long> cooldownDurations = new HashMap<>();
     // 冷却时长（单位：毫秒）
     private long cooldownTimeMillis;
 
@@ -30,7 +31,7 @@ public class CooldownManager {
         if (cooldowns.containsKey(playerId)) {
             long lastUsed = cooldowns.get(playerId);
             long elapsed = System.currentTimeMillis() - lastUsed;
-            return elapsed < cooldownTimeMillis;
+            return elapsed < durationFor(playerId);
         }
         return false;
     }
@@ -45,7 +46,7 @@ public class CooldownManager {
         UUID playerId = player.getUniqueId();
         if (cooldowns.containsKey(playerId)) {
             long elapsed = System.currentTimeMillis() - cooldowns.get(playerId);
-            long remaining = cooldownTimeMillis - elapsed;
+            long remaining = durationFor(playerId) - elapsed;
             return remaining > 0 ? remaining / 1000 : 0;
         }
         return 0;
@@ -60,6 +61,19 @@ public class CooldownManager {
         cooldowns.put(player.getUniqueId(), System.currentTimeMillis());
     }
 
+    public double remainingFraction(Player player) {
+        UUID id=player.getUniqueId();
+        long duration=durationFor(id);
+        if (duration<=0 || !cooldowns.containsKey(id)) return 0;
+        return Math.max(0,Math.min(1,(duration-(System.currentTimeMillis()-cooldowns.get(id)))/(double)duration));
+    }
+
+    /** Sets this player's duration without changing the duration used by other players. */
+    public void setCooldown(Player player, long cooldownTimeSeconds) {
+        cooldownDurations.put(player.getUniqueId(), Math.max(0L, cooldownTimeSeconds) * 1000L);
+        setCooldown(player);
+    }
+
     /**
      * 设置玩家的冷却，记录当前使用时间
      *
@@ -67,5 +81,9 @@ public class CooldownManager {
      */
     public void setItemCooldown(long cooldownTimeSeconds) {
         this.cooldownTimeMillis = cooldownTimeSeconds * 1000;
+    }
+
+    private long durationFor(UUID playerId) {
+        return cooldownDurations.getOrDefault(playerId, cooldownTimeMillis);
     }
 }

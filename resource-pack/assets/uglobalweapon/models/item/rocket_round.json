@@ -1,0 +1,1160 @@
+{
+  "gui_light": "side",
+  "textures": {
+    "olive": "uglobalweapon:item/palette/olive",
+    "light": "uglobalweapon:item/palette/light",
+    "dark": "uglobalweapon:item/palette/dark",
+    "metal": "uglobalweapon:item/palette/metal",
+    "yellow": "uglobalweapon:item/palette/yellow",
+    "rubber": "uglobalweapon:item/palette/rubber",
+    "silver": "uglobalweapon:item/palette/silver",
+    "lens": "uglobalweapon:item/palette/lens",
+    "warm": "uglobalweapon:item/palette/warm",
+    "hot": "uglobalweapon:item/palette/hot",
+    "red": "uglobalweapon:item/palette/red",
+    "olive_band_97": "uglobalweapon:item/palette/olive_band_97",
+    "olive_band_92": "uglobalweapon:item/palette/olive_band_92",
+    "olive_band_87": "uglobalweapon:item/palette/olive_band_87",
+    "olive_band_82": "uglobalweapon:item/palette/olive_band_82",
+    "olive_band_76": "uglobalweapon:item/palette/olive_band_76",
+    "olive_band_71": "uglobalweapon:item/palette/olive_band_71",
+    "olive_band_66": "uglobalweapon:item/palette/olive_band_66",
+    "olive_band_61": "uglobalweapon:item/palette/olive_band_61",
+    "olive_band_55": "uglobalweapon:item/palette/olive_band_55",
+    "olive_band_50": "uglobalweapon:item/palette/olive_band_50",
+    "olive_band_45": "uglobalweapon:item/palette/olive_band_45",
+    "olive_band_39": "uglobalweapon:item/palette/olive_band_39",
+    "olive_band_34": "uglobalweapon:item/palette/olive_band_34",
+    "olive_band_29": "uglobalweapon:item/palette/olive_band_29",
+    "olive_band_24": "uglobalweapon:item/palette/olive_band_24",
+    "olive_band_18": "uglobalweapon:item/palette/olive_band_18",
+    "olive_band_13": "uglobalweapon:item/palette/olive_band_13",
+    "olive_band_8": "uglobalweapon:item/palette/olive_band_8",
+    "olive_band_4": "uglobalweapon:item/palette/olive_band_4",
+    "dark_band_97": "uglobalweapon:item/palette/dark_band_97",
+    "dark_band_92": "uglobalweapon:item/palette/dark_band_92",
+    "dark_band_87": "uglobalweapon:item/palette/dark_band_87",
+    "metal_band_82": "uglobalweapon:item/palette/metal_band_82",
+    "metal_band_76": "uglobalweapon:item/palette/metal_band_76",
+    "metal_band_71": "uglobalweapon:item/palette/metal_band_71",
+    "metal_band_66": "uglobalweapon:item/palette/metal_band_66",
+    "metal_band_61": "uglobalweapon:item/palette/metal_band_61",
+    "metal_band_55": "uglobalweapon:item/palette/metal_band_55",
+    "metal_band_50": "uglobalweapon:item/palette/metal_band_50",
+    "metal_band_45": "uglobalweapon:item/palette/metal_band_45",
+    "light_band_39": "uglobalweapon:item/palette/light_band_39",
+    "light_band_34": "uglobalweapon:item/palette/light_band_34",
+    "light_band_29": "uglobalweapon:item/palette/light_band_29",
+    "light_band_24": "uglobalweapon:item/palette/light_band_24",
+    "light_band_18": "uglobalweapon:item/palette/light_band_18",
+    "light_band_13": "uglobalweapon:item/palette/light_band_13",
+    "light_band_8": "uglobalweapon:item/palette/light_band_8",
+    "light_band_4": "uglobalweapon:item/palette/light_band_4",
+    "metal_band_34": "uglobalweapon:item/palette/metal_band_34",
+    "metal_band_29": "uglobalweapon:item/palette/metal_band_29",
+    "metal_band_24": "uglobalweapon:item/palette/metal_band_24",
+    "metal_band_18": "uglobalweapon:item/palette/metal_band_18",
+    "metal_band_13": "uglobalweapon:item/palette/metal_band_13",
+    "metal_band_8": "uglobalweapon:item/palette/metal_band_8",
+    "metal_band_4": "uglobalweapon:item/palette/metal_band_4",
+    "olive_band_32": "uglobalweapon:item/palette/olive_band_32",
+    "olive_band_27": "uglobalweapon:item/palette/olive_band_27",
+    "olive_band_22": "uglobalweapon:item/palette/olive_band_22",
+    "olive_band_16": "uglobalweapon:item/palette/olive_band_16",
+    "olive_band_11": "uglobalweapon:item/palette/olive_band_11",
+    "olive_band_6": "uglobalweapon:item/palette/olive_band_6",
+    "yellow_band_26": "uglobalweapon:item/palette/yellow_band_26",
+    "yellow_band_23": "uglobalweapon:item/palette/yellow_band_23",
+    "yellow_band_13": "uglobalweapon:item/palette/yellow_band_13",
+    "yellow_band_10": "uglobalweapon:item/palette/yellow_band_10",
+    "yellow_band_4": "uglobalweapon:item/palette/yellow_band_4",
+    "silver_band_33": "uglobalweapon:item/palette/silver_band_33",
+    "heated_olive": "uglobalweapon:item/palette/olive",
+    "heated_light": "uglobalweapon:item/palette/light",
+    "heated_dark": "uglobalweapon:item/palette/dark",
+    "heated_metal": "uglobalweapon:item/palette/metal",
+    "heated_yellow": "uglobalweapon:item/palette/yellow",
+    "heated_rubber": "uglobalweapon:item/palette/rubber",
+    "heated_silver": "uglobalweapon:item/palette/silver",
+    "heated_lens": "uglobalweapon:item/palette/lens",
+    "heated_warm": "uglobalweapon:item/palette/warm",
+    "heated_hot": "uglobalweapon:item/palette/hot",
+    "heated_red": "uglobalweapon:item/palette/red",
+    "heated_olive_band_97": "uglobalweapon:item/palette/olive_band_97",
+    "heated_olive_band_92": "uglobalweapon:item/palette/olive_band_92",
+    "heated_olive_band_87": "uglobalweapon:item/palette/olive_band_87",
+    "heated_olive_band_82": "uglobalweapon:item/palette/olive_band_82",
+    "heated_olive_band_76": "uglobalweapon:item/palette/olive_band_76",
+    "heated_olive_band_71": "uglobalweapon:item/palette/olive_band_71",
+    "heated_olive_band_66": "uglobalweapon:item/palette/olive_band_66",
+    "heated_olive_band_61": "uglobalweapon:item/palette/olive_band_61",
+    "heated_olive_band_55": "uglobalweapon:item/palette/olive_band_55",
+    "heated_olive_band_50": "uglobalweapon:item/palette/olive_band_50",
+    "heated_olive_band_45": "uglobalweapon:item/palette/olive_band_45",
+    "heated_olive_band_39": "uglobalweapon:item/palette/olive_band_39",
+    "heated_olive_band_34": "uglobalweapon:item/palette/olive_band_34",
+    "heated_olive_band_29": "uglobalweapon:item/palette/olive_band_29",
+    "heated_olive_band_24": "uglobalweapon:item/palette/olive_band_24",
+    "heated_olive_band_18": "uglobalweapon:item/palette/olive_band_18",
+    "heated_olive_band_13": "uglobalweapon:item/palette/olive_band_13",
+    "heated_olive_band_8": "uglobalweapon:item/palette/olive_band_8",
+    "heated_olive_band_4": "uglobalweapon:item/palette/olive_band_4",
+    "heated_dark_band_97": "uglobalweapon:item/palette/dark_band_97",
+    "heated_dark_band_92": "uglobalweapon:item/palette/dark_band_92",
+    "heated_dark_band_87": "uglobalweapon:item/palette/dark_band_87",
+    "heated_metal_band_82": "uglobalweapon:item/palette/metal_band_82",
+    "heated_metal_band_76": "uglobalweapon:item/palette/metal_band_76",
+    "heated_metal_band_71": "uglobalweapon:item/palette/metal_band_71",
+    "heated_metal_band_66": "uglobalweapon:item/palette/metal_band_66",
+    "heated_metal_band_61": "uglobalweapon:item/palette/metal_band_61",
+    "heated_metal_band_55": "uglobalweapon:item/palette/metal_band_55",
+    "heated_metal_band_50": "uglobalweapon:item/palette/metal_band_50",
+    "heated_metal_band_45": "uglobalweapon:item/palette/metal_band_45",
+    "heated_light_band_39": "uglobalweapon:item/palette/light_band_39",
+    "heated_light_band_34": "uglobalweapon:item/palette/light_band_34",
+    "heated_light_band_29": "uglobalweapon:item/palette/light_band_29",
+    "heated_light_band_24": "uglobalweapon:item/palette/light_band_24",
+    "heated_light_band_18": "uglobalweapon:item/palette/light_band_18",
+    "heated_light_band_13": "uglobalweapon:item/palette/light_band_13",
+    "heated_light_band_8": "uglobalweapon:item/palette/light_band_8",
+    "heated_light_band_4": "uglobalweapon:item/palette/light_band_4",
+    "heated_metal_band_34": "uglobalweapon:item/palette/metal_band_34",
+    "heated_metal_band_29": "uglobalweapon:item/palette/metal_band_29",
+    "heated_metal_band_24": "uglobalweapon:item/palette/metal_band_24",
+    "heated_metal_band_18": "uglobalweapon:item/palette/metal_band_18",
+    "heated_metal_band_13": "uglobalweapon:item/palette/metal_band_13",
+    "heated_metal_band_8": "uglobalweapon:item/palette/metal_band_8",
+    "heated_metal_band_4": "uglobalweapon:item/palette/metal_band_4",
+    "heated_olive_band_32": "uglobalweapon:item/palette/olive_band_32",
+    "heated_olive_band_27": "uglobalweapon:item/palette/olive_band_27",
+    "heated_olive_band_22": "uglobalweapon:item/palette/olive_band_22",
+    "heated_olive_band_16": "uglobalweapon:item/palette/olive_band_16",
+    "heated_olive_band_11": "uglobalweapon:item/palette/olive_band_11",
+    "heated_olive_band_6": "uglobalweapon:item/palette/olive_band_6",
+    "heated_yellow_band_26": "uglobalweapon:item/palette/yellow_band_26",
+    "heated_yellow_band_23": "uglobalweapon:item/palette/yellow_band_23",
+    "heated_yellow_band_13": "uglobalweapon:item/palette/yellow_band_13",
+    "heated_yellow_band_10": "uglobalweapon:item/palette/yellow_band_10",
+    "heated_yellow_band_4": "uglobalweapon:item/palette/yellow_band_4",
+    "heated_silver_band_33": "uglobalweapon:item/palette/silver_band_33",
+    "particle": "uglobalweapon:item/palette/olive"
+  },
+  "display": {
+    "gui": {
+      "rotation": [
+        25,
+        135,
+        0
+      ],
+      "scale": [
+        0.85,
+        0.85,
+        0.85
+      ]
+    },
+    "ground": {
+      "translation": [
+        0,
+        2,
+        0
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        0,
+        -15
+      ],
+      "scale": [
+        0.75,
+        0.75,
+        0.75
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        0,
+        0,
+        15
+      ],
+      "scale": [
+        0.75,
+        0.75,
+        0.75
+      ]
+    }
+  },
+  "elements": [
+    {
+      "name": "motor case",
+      "from": [
+        6.6,
+        6.6,
+        1.5
+      ],
+      "to": [
+        9.4,
+        9.4,
+        11
+      ],
+      "faces": {
+        "north": {
+          "texture": "#olive",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "texture": "#olive",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "texture": "#olive",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "texture": "#olive",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "texture": "#olive",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "texture": "#olive",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "name": "warhead shoulder",
+      "from": [
+        6.1,
+        6.1,
+        10.5
+      ],
+      "to": [
+        9.9,
+        9.9,
+        13.2
+      ],
+      "faces": {
+        "north": {
+          "texture": "#olive",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "texture": "#olive",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "texture": "#olive",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "texture": "#olive",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "texture": "#olive",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "texture": "#olive",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "name": "warhead taper",
+      "from": [
+        6.6,
+        6.6,
+        13.2
+      ],
+      "to": [
+        9.4,
+        9.4,
+        15
+      ],
+      "faces": {
+        "north": {
+          "texture": "#light",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "texture": "#light",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "texture": "#light",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "texture": "#light",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "texture": "#light",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "texture": "#light",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "name": "warhead nose",
+      "from": [
+        7.2,
+        7.2,
+        15
+      ],
+      "to": [
+        8.8,
+        8.8,
+        16.5
+      ],
+      "faces": {
+        "north": {
+          "texture": "#olive",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "texture": "#olive",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "texture": "#olive",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "texture": "#olive",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "texture": "#olive",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "texture": "#olive",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "name": "nose cap",
+      "from": [
+        7.6,
+        7.6,
+        16.5
+      ],
+      "to": [
+        8.4,
+        8.4,
+        17.3
+      ],
+      "faces": {
+        "north": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "name": "yellow band",
+      "from": [
+        6.45,
+        6.45,
+        9.3
+      ],
+      "to": [
+        9.55,
+        9.55,
+        10.3
+      ],
+      "faces": {
+        "north": {
+          "texture": "#yellow",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "texture": "#yellow",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "texture": "#yellow",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "texture": "#yellow",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "texture": "#yellow",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "texture": "#yellow",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "name": "rear collar",
+      "from": [
+        6.25,
+        6.25,
+        0.5
+      ],
+      "to": [
+        9.75,
+        9.75,
+        1.8
+      ],
+      "faces": {
+        "north": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "name": "nozzle",
+      "from": [
+        7,
+        7,
+        -0.3
+      ],
+      "to": [
+        9,
+        9,
+        0.5
+      ],
+      "faces": {
+        "north": {
+          "texture": "#rubber",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "texture": "#rubber",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "texture": "#rubber",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "texture": "#rubber",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "texture": "#rubber",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "texture": "#rubber",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "name": "exhaust core",
+      "from": [
+        7.6,
+        7.6,
+        -0.5
+      ],
+      "to": [
+        8.4,
+        8.4,
+        -0.3
+      ],
+      "faces": {
+        "north": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "name": "stabilizer fin",
+      "from": [
+        4.4,
+        7.75,
+        1.8
+      ],
+      "to": [
+        6.6,
+        8.25,
+        5.3
+      ],
+      "faces": {
+        "north": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "name": "stabilizer fin",
+      "from": [
+        9.4,
+        7.75,
+        1.8
+      ],
+      "to": [
+        11.6,
+        8.25,
+        5.3
+      ],
+      "faces": {
+        "north": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "name": "stabilizer fin",
+      "from": [
+        7.75,
+        4.4,
+        1.8
+      ],
+      "to": [
+        8.25,
+        6.6,
+        5.3
+      ],
+      "faces": {
+        "north": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "name": "stabilizer fin",
+      "from": [
+        7.75,
+        9.4,
+        1.8
+      ],
+      "to": [
+        8.25,
+        11.6,
+        5.3
+      ],
+      "faces": {
+        "north": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "name": "service marking",
+      "from": [
+        6.4,
+        7,
+        6.2
+      ],
+      "to": [
+        6.6,
+        8.7,
+        7
+      ],
+      "faces": {
+        "north": {
+          "texture": "#silver",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "texture": "#silver",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "texture": "#silver",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "texture": "#silver",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "texture": "#silver",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "texture": "#silver",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    }
+  ]
+}
