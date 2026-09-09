@@ -111,3 +111,13 @@ buildNumber.properties
 
 # Common working directory
 run/
+
+# Client/build caches and local release artifacts
+**/.gradle/
+/client/build/
+/dist/
+**/__pycache__/
+*.py[cod]
+*.blend1
+/models/*_preview.png
+/models/*_geometry.json

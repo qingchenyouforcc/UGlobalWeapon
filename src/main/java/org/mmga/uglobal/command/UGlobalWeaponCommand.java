@@ -11,6 +11,7 @@ import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import org.mmga.uglobal.Weapon;
 import org.mmga.uglobal.utils.WarningSoundSummon;
+import org.mmga.uglobal.utils.RpgAnimation;
 import org.mmga.uglobal.weapon.Missile;
 import org.mmga.uglobal.weapon.Fireball;
 
@@ -39,6 +40,17 @@ public class UGlobalWeaponCommand implements CommandExecutor {
         // 根据参数执行不同的逻辑
         try {
             switch (parameter.toLowerCase()) {
+                case "寂灭":
+                case "annihilation":
+                    player.getInventory().addItem(org.mmga.uglobal.weapon.Annihilation.create());
+                    break;
+                case "ammo":
+                case "rocket":
+                    int count=args.length>1 ? Integer.parseInt(args[1]) : 16;
+                    if (count<1 || count>64) { player.sendMessage(ChatColor.RED+"数量应为 1–64。"); return true; }
+                    player.getInventory().addItem(org.mmga.uglobal.weapon.RocketAmmo.create(count)).values()
+                            .forEach(left -> player.getWorld().dropItemNaturally(player.getLocation(),left));
+                    break;
                 case "rpg":
                     // 获得rpg
                     switch (args[1]) {
@@ -108,6 +120,8 @@ public class UGlobalWeaponCommand implements CommandExecutor {
             // 存储一个字符串作为自定义标记
             container.set(key, PersistentDataType.STRING, "RPG");
             RPG_Mate.setDisplayName(ChatColor.RED + "RPG_" + type);
+            RPG_Mate.setCustomModelData(RpgAnimation.IDLE);
+            RPG_Mate.setEnchantmentGlintOverride(false);
             RPGItem.setItemMeta(RPG_Mate);
         }
         RPGItem.setItemMeta(RPG_Mate);

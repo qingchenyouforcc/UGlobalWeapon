@@ -1,0 +1,7 @@
+{
+  "annihilation_fire":{"sounds":[]},
+  "annihilation_impact":{"sounds":[]},
+  "annihilation_collapse":{"sounds":[]},
+  "annihilation_blast":{"sounds":[]}
+  ,"annihilation_blast_end":{"sounds":[]}
+}
